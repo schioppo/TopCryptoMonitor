@@ -22,50 +22,23 @@ struct CryptoListView: View {
             if viewModel.isLoading {
                 
                 Spacer()
-                ProgressView("Loading...")
-                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-                    .padding()
+                Loader()
                 Spacer()
                 
             } else if let error = viewModel.errorMessage {
                 
                 Spacer()
-                
-                VStack(spacing: 16) {
-                    Text(error)
-                        .font(.headline)
-                        .foregroundColor(.red)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal)
-                    
-                    Button(action: {
-                        viewModel.retry()
-                    }) {
-                        Text("Retry")
-                            .font(.headline)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
-                    .padding(.horizontal, 16)
-                }
-                
+                ErrorView(action: viewModel.retry, errorMessage: error)
                 Spacer()
                 
             } else {
                 
                 ScrollView {
-                    LazyVStack(spacing: 8) {
+                    LazyVStack(spacing: 5) {
                         ForEach(viewModel.topCryptos) { crypto in
                             CryptoRowView(crypto: crypto)
+                                .cardWithShadow(shadowOpacity: 0.2, shadowY: 0)
                                 .padding(.vertical, 8)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .fill(Color.white)
-                                )
-                                .shadow(color: Color.gray.opacity(0.3), radius: 5, x: 2, y: 2)
                                 .padding(.horizontal, 8)
                                 .onTapGesture { viewModel.didTapCrypto(crypto) }
                         }

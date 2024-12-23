@@ -46,6 +46,7 @@ extension CryptoCoordinator: CryptoListViewModelNavigationDelegate {
         let cryptoDetailViewModel = CryptoDetailViewModel(apiProvider: apiProvider, cryptoId: crypto.id)
         let cryptoDetailController = UIHostingController(
             rootView: CryptoDetailView(viewModel: cryptoDetailViewModel))
+        cryptoDetailController.title = crypto.name
         
         navigationController?.pushViewController(cryptoDetailController, animated: true)
     }

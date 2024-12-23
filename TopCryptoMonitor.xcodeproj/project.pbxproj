@@ -28,6 +28,10 @@
 		BAE42D4C2D17236900D2B0E6 /* GetCryptoListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE42D4B2D17236900D2B0E6 /* GetCryptoListAPI.swift */; };
 		BAE42D4F2D18591100D2B0E6 /* CryptoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE42D4E2D18591100D2B0E6 /* CryptoDetailView.swift */; };
 		BAE42D512D18591E00D2B0E6 /* CryptoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE42D502D18591E00D2B0E6 /* CryptoDetailViewModel.swift */; };
+		BAF1955D2D197E4800FD6407 /* CryptoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1955C2D197E4800FD6407 /* CryptoDetail.swift */; };
+		BAF1955F2D19886B00FD6407 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1955E2D19886B00FD6407 /* Loader.swift */; };
+		BAF195612D1988FA00FD6407 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF195602D1988FA00FD6407 /* ErrorView.swift */; };
+		BAF195632D199CB200FD6407 /* CardWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF195622D199CB200FD6407 /* CardWithShadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +82,10 @@
 		BAE42D4B2D17236900D2B0E6 /* GetCryptoListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCryptoListAPI.swift; sourceTree = "<group>"; };
 		BAE42D4E2D18591100D2B0E6 /* CryptoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailView.swift; sourceTree = "<group>"; };
 		BAE42D502D18591E00D2B0E6 /* CryptoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailViewModel.swift; sourceTree = "<group>"; };
+		BAF1955C2D197E4800FD6407 /* CryptoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetail.swift; sourceTree = "<group>"; };
+		BAF1955E2D19886B00FD6407 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		BAF195602D1988FA00FD6407 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		BAF195622D199CB200FD6407 /* CardWithShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWithShadow.swift; sourceTree = "<group>"; };
 		BC6B6BA92490C1093EA8890D /* Pods-TopCryptoMonitor-TopCryptoMonitorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCryptoMonitor-TopCryptoMonitorUITests.release.xcconfig"; path = "Target Support Files/Pods-TopCryptoMonitor-TopCryptoMonitorUITests/Pods-TopCryptoMonitor-TopCryptoMonitorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FCFA0A76875C49ABABEC603F /* Pods-TopCryptoMonitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCryptoMonitorTests.release.xcconfig"; path = "Target Support Files/Pods-TopCryptoMonitorTests/Pods-TopCryptoMonitorTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				BA5744B32D1876AA000B5619 /* String.swift */,
+				BAF195622D199CB200FD6407 /* CardWithShadow.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -204,6 +213,8 @@
 			children = (
 				BAE42D4D2D18590200D2B0E6 /* Detail */,
 				BAB7EC0E2D16F8D00097BDA2 /* List */,
+				BAF1955E2D19886B00FD6407 /* Loader.swift */,
+				BAF195602D1988FA00FD6407 /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				BAE42D452D170D4100D2B0E6 /* Crypto.swift */,
+				BAF1955C2D197E4800FD6407 /* CryptoDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -516,8 +528,12 @@
 				BA5744B42D1876AA000B5619 /* String.swift in Sources */,
 				BAE42D512D18591E00D2B0E6 /* CryptoDetailViewModel.swift in Sources */,
 				BA5744B12D187508000B5619 /* GetCryptoDetailAPI.swift in Sources */,
+				BAF1955D2D197E4800FD6407 /* CryptoDetail.swift in Sources */,
+				BAF195612D1988FA00FD6407 /* ErrorView.swift in Sources */,
+				BAF195632D199CB200FD6407 /* CardWithShadow.swift in Sources */,
 				BAE42D492D1710CC00D2B0E6 /* NetworkManager.swift in Sources */,
 				BAE42D462D170D4100D2B0E6 /* Crypto.swift in Sources */,
+				BAF1955F2D19886B00FD6407 /* Loader.swift in Sources */,
 				BAB7EC132D16FB0F0097BDA2 /* CryptoCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

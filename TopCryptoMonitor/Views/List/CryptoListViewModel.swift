@@ -46,7 +46,7 @@ class CryptoListViewModel: ObservableObject {
                 }
                 
             } catch {
-                errorMessage = "Non è stato possibile recuperare i dati"
+                await MainActor.run { self.errorMessage = "Non è stato possibile recuperare i dati" }
             }
             
             await MainActor.run { self.isLoading = false }
