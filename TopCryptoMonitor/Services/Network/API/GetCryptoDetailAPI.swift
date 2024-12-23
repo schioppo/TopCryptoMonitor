@@ -13,7 +13,7 @@ struct GetCryptoDetailAPI: API {
     var method: HTTPMethod = .get
     var headers: [String : String]?
     var queryParameters: [String : String]? = [
-        "localization": "false",
+        "localization": "true",
         "tickers": "false",
         "market_data": "true",
         "community_data": "false",
@@ -28,17 +28,27 @@ struct GetCryptoDetailAPI: API {
     
     typealias Output = CryptoDetailDTO
     
-    struct CryptoDetailDTO: Codable {
-        let name: String
-        let descriptionHtml: [String: String]
+    struct CryptoDetailDTO: Decodable {
+        @LocalizedString var name: String
+        @LocalizedString var descriptionHtml: String
         let links: CryptoLinkDTO
         let marketData: MarketDataDTO
         
         enum CodingKeys: String, CodingKey {
-            case name
+            case name = "localization"
             case descriptionHtml = "description"
             case links
             case marketData = "market_data"
+        }
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            let names = try container.decode([String: String].self, forKey: .name)
+            self._name = LocalizedString(values: names)
+            let descriptions = try container.decode([String: String].self, forKey: .descriptionHtml)
+            self._descriptionHtml = LocalizedString(values: descriptions)
+            self.links = try container.decode(CryptoLinkDTO.self, forKey: .links)
+            self.marketData = try container.decode(MarketDataDTO.self, forKey: .marketData)
         }
     }
     

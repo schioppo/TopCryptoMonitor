@@ -1,0 +1,11 @@
+//MARK: - List
+"homepage_title" = "Attuali 10 migliori crypto:";
+
+//MARK: - Detail
+"visit_website" = "Visita il sito web";
+"last_week_prices" = "Andamento prezzi nell'ultima settimana";
+
+//MARK: - Error
+"retry_error_cta_title" = "Riprova";
+"get_crypto_list_message_error" = "Non è stato possibile recuperare la lista delle crypto";
+"get_crypto_detail_message_error" = "Non è stato possibile recuperare i dettagli per la crypto selezionata";

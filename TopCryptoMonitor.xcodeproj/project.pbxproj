@@ -32,6 +32,10 @@
 		BAF1955F2D19886B00FD6407 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF1955E2D19886B00FD6407 /* Loader.swift */; };
 		BAF195612D1988FA00FD6407 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF195602D1988FA00FD6407 /* ErrorView.swift */; };
 		BAF195632D199CB200FD6407 /* CardWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF195622D199CB200FD6407 /* CardWithShadow.swift */; };
+		BAF1956F2D19ABFB00FD6407 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAF195712D19ABFB00FD6407 /* Localizable.strings */; };
+		BAF195742D19B52600FD6407 /* CryptoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF195732D19B52600FD6407 /* CryptoError.swift */; };
+		BAF195762D19B8B500FD6407 /* LocalizableStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF195752D19B8B500FD6407 /* LocalizableStrings.swift */; };
+		BAF195782D19BF0C00FD6407 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF195772D19BF0C00FD6407 /* LocalizedString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +90,11 @@
 		BAF1955E2D19886B00FD6407 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		BAF195602D1988FA00FD6407 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		BAF195622D199CB200FD6407 /* CardWithShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWithShadow.swift; sourceTree = "<group>"; };
+		BAF195702D19ABFB00FD6407 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BAF195722D19AC0700FD6407 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BAF195732D19B52600FD6407 /* CryptoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoError.swift; sourceTree = "<group>"; };
+		BAF195752D19B8B500FD6407 /* LocalizableStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableStrings.swift; sourceTree = "<group>"; };
+		BAF195772D19BF0C00FD6407 /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		BC6B6BA92490C1093EA8890D /* Pods-TopCryptoMonitor-TopCryptoMonitorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCryptoMonitor-TopCryptoMonitorUITests.release.xcconfig"; path = "Target Support Files/Pods-TopCryptoMonitor-TopCryptoMonitorUITests/Pods-TopCryptoMonitor-TopCryptoMonitorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FCFA0A76875C49ABABEC603F /* Pods-TopCryptoMonitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCryptoMonitorTests.release.xcconfig"; path = "Target Support Files/Pods-TopCryptoMonitorTests/Pods-TopCryptoMonitorTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +158,8 @@
 			children = (
 				BA5744B32D1876AA000B5619 /* String.swift */,
 				BAF195622D199CB200FD6407 /* CardWithShadow.swift */,
+				BAF195732D19B52600FD6407 /* CryptoError.swift */,
+				BAF195772D19BF0C00FD6407 /* LocalizedString.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -187,6 +198,8 @@
 				BAB7EBE62D16E9980097BDA2 /* Assets.xcassets */,
 				BAB7EBE82D16E9980097BDA2 /* LaunchScreen.storyboard */,
 				BAB7EBEB2D16E9980097BDA2 /* Info.plist */,
+				BAF195712D19ABFB00FD6407 /* Localizable.strings */,
+				BAF195752D19B8B500FD6407 /* LocalizableStrings.swift */,
 			);
 			path = TopCryptoMonitor;
 			sourceTree = "<group>";
@@ -372,6 +385,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = BAB7EBD12D16E9970097BDA2;
 			productRefGroup = BAB7EBDB2D16E9970097BDA2 /* Products */;
@@ -391,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB7EBEA2D16E9980097BDA2 /* LaunchScreen.storyboard in Resources */,
+				BAF1956F2D19ABFB00FD6407 /* Localizable.strings in Resources */,
 				BAB7EBE72D16E9980097BDA2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,10 +534,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF195782D19BF0C00FD6407 /* LocalizedString.swift in Sources */,
 				BAB7EBE22D16E9970097BDA2 /* CryptoListView.swift in Sources */,
 				BAE42D4C2D17236900D2B0E6 /* GetCryptoListAPI.swift in Sources */,
 				BAB7EC102D16F8E20097BDA2 /* CryptoListViewModel.swift in Sources */,
 				BAE42D4F2D18591100D2B0E6 /* CryptoDetailView.swift in Sources */,
+				BAF195742D19B52600FD6407 /* CryptoError.swift in Sources */,
 				BAE42D402D16FF3D00D2B0E6 /* ApiProvider.swift in Sources */,
 				BAB7EBDE2D16E9970097BDA2 /* AppDelegate.swift in Sources */,
 				BA5744B42D1876AA000B5619 /* String.swift in Sources */,
@@ -531,6 +548,7 @@
 				BAF1955D2D197E4800FD6407 /* CryptoDetail.swift in Sources */,
 				BAF195612D1988FA00FD6407 /* ErrorView.swift in Sources */,
 				BAF195632D199CB200FD6407 /* CardWithShadow.swift in Sources */,
+				BAF195762D19B8B500FD6407 /* LocalizableStrings.swift in Sources */,
 				BAE42D492D1710CC00D2B0E6 /* NetworkManager.swift in Sources */,
 				BAE42D462D170D4100D2B0E6 /* Crypto.swift in Sources */,
 				BAF1955F2D19886B00FD6407 /* Loader.swift in Sources */,
@@ -579,6 +597,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		BAF195712D19ABFB00FD6407 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAF195702D19ABFB00FD6407 /* en */,
+				BAF195722D19AC0700FD6407 /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -587,6 +614,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -650,6 +678,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

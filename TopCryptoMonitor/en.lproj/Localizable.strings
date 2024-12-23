@@ -1,0 +1,11 @@
+// MARK: - List
+"homepage_title" = "Acutal 10 top crypto:";
+
+// MARK: - Detail
+"visit_website" = "Visit website";
+"last_week_prices" = "Price variation in the last week";
+
+// MARK: - Error
+"retry_error_cta_title" = "Retry";
+"get_crypto_list_message_error" = "It was not possible to retrieve the crypto list";
+"get_crypto_detail_message_error" = "It was not possible to retrieve the crypto detail selected";

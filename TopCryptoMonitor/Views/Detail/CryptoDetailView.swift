@@ -36,11 +36,11 @@ struct CryptoDetailView: View {
                             .padding(.bottom)
                         
                         if let url = URL(string: viewModel.crypto?.website ?? "") {
-                            Link("Visit website", destination: url)
+                            Link(LocalizableStrings.visitWebsite, destination: url)
                                 .padding(.bottom)
                         }
                         
-                        Text("Last week prices:")
+                        Text(LocalizableStrings.lastWeekPrices)
                             .font(.headline)
                             .padding(.bottom)
                         

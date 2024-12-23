@@ -37,15 +37,15 @@ class CryptoDetailViewModel: ObservableObject {
                 await MainActor.run {
                     self.crypto =
                         CryptoDetail(name: cryptoDetail.name,
-                                     description: cryptoDetail.descriptionHtml.first?.value.htmlToString() ?? "",
+                                     description: cryptoDetail.descriptionHtml.htmlToString(),
                                      website: cryptoDetail.links.homepage.first ?? "",
                                      lastWeekPriceValues: cryptoDetail.marketData.sparkline7d.prices)
-                    
                 }
                 
             } catch {
-                print(error)
-                errorMessage = "Non è stato possibile recuperare i dati"
+                guard let error = error as? NetworkError else { return }
+                print(error.errorDescription)
+                await MainActor.run { self.errorMessage = CryptoAPIError.getCryptoDetail.errorDescription }
             }
             
             await MainActor.run { self.isLoading = false }

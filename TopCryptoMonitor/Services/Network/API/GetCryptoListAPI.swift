@@ -15,7 +15,8 @@ struct GetCryptoListAPI: API {
     var queryParameters: [String : String]? = [
         "vs_currency": "eur",
         "order": "market_cap_desc",
-        "per_page": "10"
+        "per_page": "10",
+        "locale": "\(Language.currentLanguage)"
     ]
     var bodyRequest: Data?
     

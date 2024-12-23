@@ -14,7 +14,7 @@ struct CryptoListView: View {
     var body: some View {
         VStack {
             
-            Text("Top 10 Cryptos:")
+            Text(LocalizableStrings.homepageTitle)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.top, 16)

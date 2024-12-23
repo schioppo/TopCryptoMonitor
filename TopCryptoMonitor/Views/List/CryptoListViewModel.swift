@@ -46,7 +46,9 @@ class CryptoListViewModel: ObservableObject {
                 }
                 
             } catch {
-                await MainActor.run { self.errorMessage = "Non è stato possibile recuperare i dati" }
+                guard let error = error as? NetworkError else { return }
+                print(error.errorDescription)
+                await MainActor.run { self.errorMessage = CryptoAPIError.getCryptoList.errorDescription }
             }
             
             await MainActor.run { self.isLoading = false }

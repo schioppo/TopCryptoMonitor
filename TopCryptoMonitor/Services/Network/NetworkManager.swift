@@ -20,7 +20,7 @@ class NetworkManager {
     private init() {}
 
     func perform<T: Decodable>(_ api: any API) async throws -> T {
-        guard let url = api.url else { throw URLError(.badURL) }
+        guard let url = api.url else { throw NetworkError.invalidURL }
 
         var request = URLRequest(url: url)
         request.httpMethod = api.method.rawValue
@@ -32,9 +32,22 @@ class NetworkManager {
             request.httpBody = body
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
-
-        let (data, _) = try await URLSession.shared.data(for: request)
-        let decodedResponse = try JSONDecoder().decode(T.self, from: data)
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard !data.isEmpty else { throw NetworkError.noData }
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NetworkError.unexpectedResponse
+        }
+        
+        guard httpResponse.statusCode >= 200 || httpResponse.statusCode <= 299 else {
+            throw NetworkError.serverError(statusCode: httpResponse.statusCode)
+        }
+            
+        guard let decodedResponse = try? JSONDecoder().decode(T.self, from: data) else {
+            throw NetworkError.decodingFailed
+        }
+        
         return decodedResponse
     }
 }
@@ -79,3 +92,21 @@ enum HTTPMethod: String {
     case delete = "DELETE"
 }
 
+//MARK: - NetworkError
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingFailed
+    case serverError(statusCode: Int)
+    case unexpectedResponse
+    
+    var errorDescription: String {
+        switch self {
+        case .invalidURL: return "The URL is invalid."
+        case .noData: return "No data was received from the server."
+        case .decodingFailed: return "Failed to decode the data."
+        case .serverError(let statusCode): return "Server returned an error with status code \(statusCode)."
+        case .unexpectedResponse: return "Unexpected response from server."
+        }
+    }
+}

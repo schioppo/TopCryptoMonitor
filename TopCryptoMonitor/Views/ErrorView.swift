@@ -22,7 +22,7 @@ struct ErrorView: View {
             Button(action: {
                 action()
             }) {
-                Text("Retry")
+                Text(LocalizableStrings.retryErrorCtaTitle)
                     .font(.headline)
                     .padding()
                     .background(Color.blue)
