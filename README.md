@@ -3,3 +3,4 @@ come dipendenze ho utilizzato solo "Charts" chè è una libreria che ho installa
 dettaglio della crypto per mostrare i dati con un semplice grafico a linea.
 Dopo aver clonato il repo, per runnare l'app eseguire prima un "pod install" 
 Non ho usato altre dipendenze di alcun tipo. 
+A livello tecnologico/architetturale ho scelto di utlizzare SwiftUI con MVVM-C.
