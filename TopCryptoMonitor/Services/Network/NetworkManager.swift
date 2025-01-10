@@ -40,8 +40,8 @@ class NetworkManager {
             throw NetworkError.unexpectedResponse
         }
         
-        guard httpResponse.statusCode >= 200 || httpResponse.statusCode <= 299 else {
-            throw NetworkError.serverError(statusCode: httpResponse.statusCode)
+        guard httpResponse.statusCode >= 200 && httpResponse.statusCode <= 299 else {
+            throw NetworkError.failed(statusCode: httpResponse.statusCode)
         }
             
         guard let decodedResponse = try? JSONDecoder().decode(T.self, from: data) else {
@@ -97,7 +97,7 @@ enum NetworkError: Error {
     case invalidURL
     case noData
     case decodingFailed
-    case serverError(statusCode: Int)
+    case failed(statusCode: Int)
     case unexpectedResponse
     
     var errorDescription: String {
@@ -105,7 +105,7 @@ enum NetworkError: Error {
         case .invalidURL: return "The URL is invalid."
         case .noData: return "No data was received from the server."
         case .decodingFailed: return "Failed to decode the data."
-        case .serverError(let statusCode): return "Server returned an error with status code \(statusCode)."
+        case .failed(let statusCode): return "Server returned an error with status code \(statusCode)."
         case .unexpectedResponse: return "Unexpected response from server."
         }
     }
